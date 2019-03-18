@@ -1,0 +1,17 @@
+extends nav2.pug
+mixin navbar()
+  .nav
+    ul.navbar-nav
+      each val in navbar
+        li.nav-item
+          a.nav-link(href="")= val.item
+          if val.dropdown 
+            ul.dropdown-menu
+              each val1 in val.dropdown 
+                li.dropdown-item
+                  a.dropdown-link= val1.dropdownlink
+                  if val1.dropdownchild
+                    ul.dropdown-child
+                      each val2 in val1.dropdownchild
+                        li.dropdown-item
+                          a=  val2.navlink

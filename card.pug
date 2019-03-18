@@ -1,0 +1,130 @@
+-
+    var section = [
+        {
+            link : "app/img/card1.png",
+            alt: "Product",
+            title : "App landing",
+            content : " You can use this page to promote your web or mobile application.",
+            sticky : true,
+        },
+        {
+            link : "app/img/card2.png",
+            alt: "Product",
+            title : "company landing",
+            content : "You can use this page to promote your web or mobile application.",
+            sticky : false,
+        },
+        {
+            link : "app/img/card3.png",
+            alt: "Product",
+            title : "fullpage scrolling",
+            content : "You can use this page to promote your web or mobile application.",
+            sticky : true,
+        },
+        {
+            link : "app/img/card4.png",
+            alt: "Product",
+            title : "product landing",
+            content : "You can use this page to promote your web or mobile application.",
+            sticky :true,
+        },
+        {
+            link : "app/img/card5.png",
+            alt: "Product",
+            title : "real estate landing",
+            content : "You can use this page to promote your web or mobile application.",
+            sticky : true,
+        },
+        {
+            link : "app/img/card6.png",
+            alt: "Product",
+            title : "restaurant landing",
+            content : "You can use this page to promote your web or mobile application.",
+            sticky : false,
+        },
+        {
+            link : "app/img/card7.png",
+            alt: "Product",
+            title : "service landing",
+            content : "You can use this page to promote your web or mobile application.",
+            sticky : true,
+        },
+        {
+            link : "app/img/card8.png",
+            alt: "Product",
+            title : "coming soon",
+            content : "Feel free to contact us with your ideas about new pages and components.",
+            sticky : true,
+        },
+        {
+            link : "app/img/card1.png",
+            alt: "Product",
+            title : "coming soon",
+            content : "Feel free to contact us with your ideas about new pages and components.",
+            sticky : true,
+        },
+    ];
+
+-
+    var section2 = [
+        {
+            link : "app/img/card8.png",
+            alt : "Carousel header",
+            title : "Carousel header",
+            content : "Switch between multiple slides with full cover background images.",
+            sticky : true,
+        },
+        {
+            link : "app/img/card9.png",
+            alt : "Product",
+            title : "Parallax header",
+            content : "Good old parallax effect to add even more visual interest to your page.",
+            sticky : true,
+        },
+        {
+            link : "app/img/card10.png",
+            alt : "Product",
+            title : "Video header",
+            content : "Local video background you can optionally loop if needed.",
+            sticky : true,
+        },
+    ];
+mixin card({link,alt,title,content,sticky})
+    .card
+        .card-top
+            a(href="#"): img.card-img(src=link,alt=alt)
+        .card-body
+            a(href="#")
+                h4.card-title= title
+                p.card-content= content
+
+-
+  var cardoverlay = [
+   {   
+    background: "app/img/bg_1.jpg",
+    icon : "fas fa-layer-group",
+    title : "Support pages",
+    content : "Finish off your website with multiple support pages included into the package.",
+   },
+   {   
+    background: "app/img/bg_2.jpg",
+    icon : "far fa-check-circle",
+    title : "Landing pages",
+    content : "Beautiful marketing pages to help you promote your product or a service.",
+   },
+   {
+    background: "app/img/bg_3.jpg",
+    icon : "fas fa-puzzle-piece",
+    title : "Custom components",
+    content : "Combine dozens of components to create unique layouts.",
+   },
+ ];
+mixin overlay({background,icon,title,content})
+    .card-overlay
+        img.card-img-top(src= background)
+        .card-img-body
+            i.icon(class= icon)
+            h4.card-title= title
+            p.card-content= content
+mixin button()
+    a.pruchase(href="#") pruchase

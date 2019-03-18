@@ -1,0 +1,113 @@
+include card.pug
+section.banner
+        .banner-content
+            p.text by simpleqode
+            h2.banner-title Landing pages for any occasion
+            p.info Incline is set of landing and support pages aimed at helping companies promote new cards and business launches.
+            a.pruchase(href="#") purchase now
+section.section 
+    .container 
+        .content
+            h2.section-title Landing page variants
+            p.section-info Incline comes with several professionally designed landing pages that can be easily adapted for any project.
+        .section-product
+            each val in section
+                +card({link : val.link ,alt: val.alt, span:val.span ? value : ['new!'], title : val.title, content : val.content})
+section.section.variants
+    .line
+    .container
+        .content
+            h2.section-title Header variants
+            p.section-info Polish your landing page with one of the header options below to impress your visitors at first glance.
+        .section-product
+            each val in section2
+                +card({link : val.link ,alt: val.alt, sticky: val.sticky, title : val.title, content : val.content})
+section.section
+    .container
+        .purport
+            i.fas.fa-quote-left
+            .purport-content
+                p.purport-info This theme is a Swiss Army knife of Bootstrap themes. Built with components in mind, it can be easily adjusted to create layouts of any complexity within a few minutes.
+                blockquote Yuri Gamin, Moscow
+section.section.features
+    .container
+        .content
+            h2.section-title Key theme features
+            p.section-info Incline can be used to create anything from a small marketing page to a sophisticated website.
+        .row
+            .col-md-4
+                i.icon-device.fas.fa-desktop
+                h4.text Fully responsive
+                p.text Looks great on all major browsers, tablets and mobile devices.
+            .col-md-4
+                i.icon-device.fas.fa-desktop
+                h4.text Built with SASS
+                p.text Easily adjustable with tons of SASS variables included.
+            .col-md-4
+                i.icon-device.fas.fa-desktop
+                h4.text Free support
+                p.text Feel free to contact us with any feature requests or bug reports.
+section.section.workflow
+    .container
+        .row
+            .col-md-6
+                .text-work
+                    h2.title Intuitive workflow
+                    ul.info
+                        li Speed up your development process with Gulp and BrowserSync live browser reload
+                        li Easily adjust the look of any component with tons of additional SASS variables included
+                        li Easily make global changes with HTML file @@includes
+                        a.purchase documentaion
+            .col-md-6 
+                .layer
+                    img(src="app/img/workflow.jpg")
+section.section
+    .container
+        .content
+            h2.section-title Ultimate solution
+            p.section-info Easily create a website of any complexity with dozens of pages and independent components for any purpose.
+        .intro-product
+            each val in cardoverlay
+                +overlay({icon :val.icon , title : val.title , content : val.content,background : val.background})
+//- section.section
+//-     .container
+//-         .content
+//-             h2.section-title Header variants
+//-             p.section-info Polish your landing page with one of the header options below to impress your visitors at first glance.
+//-         .row
+            
+section.section.price
+    .container
+        .content
+            h2.section-title Pricing options
+            p.section-info Secure payment via Stripe or Paypal. 100% money back guarantee.
+        .row
+            .price-product.left.avtive
+                .price-info
+                    h4.title Standard license
+                    span.value  $49.00
+                    ul.text
+                        li.list-item Use for a single product
+                        li.list-item Non-paying users only
+                        li.list-item Read
+                            a full description
+                    +button()
+            .price-product.right
+                .price-info
+                    h4.title Extended license
+                    span.value  $490.00
+                    ul.text
+                        li.list-item Use for a single product
+                        li.list-item Paying users allowed
+                        li.list-item Read
+                            a full description
+                    +button()
+section.section.download
+    .container
+        .row
+            .col-md-8
+                h3 Download it from the Bootstrap marketplace
+                p Each theme featured at the Bootstrap marketplace has been reviewed by Bootstrap's creators. Six month technical support by the theme author is provided.
+
+            .col-md-4
+                +button()
