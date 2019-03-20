@@ -12,7 +12,7 @@ section.section
             p.section-info Incline comes with several professionally designed landing pages that can be easily adapted for any project.
         .section-product
             each val in section
-                +card({link : val.link ,alt: val.alt, span:val.span ? value : ['new!'], title : val.title, content : val.content})
+                +card({link : val.link ,alt: val.alt, sticky : val.sticky, title : val.title, content : val.content})
 section.section.variants
     .line
     .container
@@ -21,7 +21,7 @@ section.section.variants
             p.section-info Polish your landing page with one of the header options below to impress your visitors at first glance.
         .section-product
             each val in section2
-                +card({link : val.link ,alt: val.alt, sticky: val.sticky, title : val.title, content : val.content})
+                +card({link : val.link ,alt: val.alt, sticky : val.sticky, title : val.title, content : val.content})
 section.section
     .container
         .purport
@@ -60,8 +60,8 @@ section.section.workflow
                         a.purchase documentaion
             .col-md-6 
                 .layer
-                    img(src="app/img/workflow.jpg")
-section.section
+                    img(src="app/img/workflow.jpg",alt="")
+section.section.solution
     .container
         .content
             h2.section-title Ultimate solution
@@ -69,12 +69,6 @@ section.section
         .intro-product
             each val in cardoverlay
                 +overlay({icon :val.icon , title : val.title , content : val.content,background : val.background})
-//- section.section
-//-     .container
-//-         .content
-//-             h2.section-title Header variants
-//-             p.section-info Polish your landing page with one of the header options below to impress your visitors at first glance.
-//-         .row
             
 section.section.price
     .container

@@ -5,63 +5,63 @@
             alt: "Product",
             title : "App landing",
             content : " You can use this page to promote your web or mobile application.",
-            sticky : true,
+            sticky : false,
         },
         {
             link : "app/img/card2.png",
             alt: "Product",
             title : "company landing",
             content : "You can use this page to promote your web or mobile application.",
-            sticky : false,
+            sticky : true,
         },
         {
             link : "app/img/card3.png",
             alt: "Product",
             title : "fullpage scrolling",
             content : "You can use this page to promote your web or mobile application.",
-            sticky : true,
+            sticky : false,
         },
         {
             link : "app/img/card4.png",
             alt: "Product",
             title : "product landing",
             content : "You can use this page to promote your web or mobile application.",
-            sticky :true,
+            sticky :false,
         },
         {
             link : "app/img/card5.png",
             alt: "Product",
             title : "real estate landing",
             content : "You can use this page to promote your web or mobile application.",
-            sticky : true,
+            sticky : false,
         },
         {
             link : "app/img/card6.png",
             alt: "Product",
             title : "restaurant landing",
             content : "You can use this page to promote your web or mobile application.",
-            sticky : false,
+            sticky : true,
         },
         {
             link : "app/img/card7.png",
             alt: "Product",
             title : "service landing",
             content : "You can use this page to promote your web or mobile application.",
-            sticky : true,
+            sticky : false,
         },
         {
             link : "app/img/card8.png",
             alt: "Product",
             title : "coming soon",
             content : "Feel free to contact us with your ideas about new pages and components.",
-            sticky : true,
+            sticky : false,
         },
         {
-            link : "app/img/card1.png",
+            link : "",
             alt: "Product",
             title : "coming soon",
             content : "Feel free to contact us with your ideas about new pages and components.",
-            sticky : true,
+            sticky : false,
         },
     ];
 
@@ -72,14 +72,14 @@
             alt : "Carousel header",
             title : "Carousel header",
             content : "Switch between multiple slides with full cover background images.",
-            sticky : true,
+            sticky : false,
         },
         {
             link : "app/img/card9.png",
             alt : "Product",
             title : "Parallax header",
             content : "Good old parallax effect to add even more visual interest to your page.",
-            sticky : true,
+            sticky : false,
         },
         {
             link : "app/img/card10.png",
@@ -90,12 +90,19 @@
         },
     ];
 mixin card({link,alt,title,content,sticky})
-    .card
+    .card(class= link? " " : "disable")
         .card-top
-            a(href="#"): img.card-img(src=link,alt=alt)
+            if(link==false)
+                a.img-none(href="#")
+                    .card-img-none
+                        i.sticky.far.fa-clock
+            else
+                a(href="#"): img.card-img(src=link,alt=alt)
         .card-body
             a(href="#")
                 h4.card-title= title
+                    if sticky
+                        span.sticky New!
                 p.card-content= content
 
 -
